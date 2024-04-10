@@ -1,0 +1,21 @@
+#cloud-config
+packages:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg-agent
+  - software-properties-common
+  - openjdk-17-jre
+  - sysstat
+runcmd:
+  - mkdir -p /opt/mc
+  - mkdir -p /opt/daemon
+  - echo "eula=true" > /opt/mc/eula.txt
+  - wget https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar -P /opt/mc/
+  - wget https://github.com/noahc3/comp4300-releases/releases/download/2024-04-10-1145/daemon.out -P /opt/daemon/
+  - chmod +x /opt/daemon/daemon.out
+  - wget https://github.com/noahc3/comp4300-releases/releases/download/2024-04-10-1145/gs-go-daemon.service -P /etc/systemd/system/
+  - chmod 755 /etc/systemd/system/gs-go-daemon.service
+  - systemctl daemon-reload
+  - systemctl enable gs-go-daemon
+  - systemctl start gs-go-daemon
