@@ -1,7 +1,16 @@
-# Cumulus - Game Server Control Panel & Daemon (COMP4300 Final Project)
+# Cumulus - Game Server Control Panel & Daemon
+
+**Authors: Noah Curoe, Mia Battad**
 
 Implementation of core technologies required for deploying and communicating with game servers hosted in the
-Cloud.
+Cloud. The final implementation uses TypeScript, React, TailwindCSS, Vite and Bun for the frontend stack, Go for the daemon software, and Python with FastAPI for some auxiliary API functions for interacting with Hetzner Public Cloud.
+
+## Video Demo
+
+Demonstration of deploying a new Minecraft server to Hetzner Public Cloud and using the web console interface
+
+[Cumulus-Demo.webm](https://github.com/noahc3/cumulus-comp4300/assets/6082749/004278a2-75e9-4057-8bee-3347a39150dc)
+
 
 ## How to run
 
@@ -77,4 +86,3 @@ include source code for the test programs we wrote during the exploration phase 
 - **project/tcpclient** - Test TCP client
 - **project/udpclient** - Test UDP client
 - **project/wsclient** - Test WebSocket client
-
